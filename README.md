@@ -192,7 +192,7 @@ This project is for research and educational purposes.
 
 ## 👥 Team
 
-*Add team members here*
+<!-- *Add team members here* -->
 Muhammad Anas Iftikhar (Lead Developer + Ml)
 Muhammad Nadeem (Machine learning lead)
 ---
