@@ -19,10 +19,10 @@ export default function Button({
   const baseStyles = 'font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
   
   const variants = {
-    primary: 'bg-[#2563EB] text-white hover:bg-[#1D4ED8] focus:ring-[#2563EB]',
-    secondary: 'bg-[#10B981] text-white hover:bg-[#059669] focus:ring-[#10B981]',
-    outline: 'bg-transparent border-2 border-[#2563EB] text-[#2563EB] hover:bg-[#2563EB] hover:text-white focus:ring-[#2563EB]',
-    danger: 'bg-[#EF4444] text-white hover:bg-[#DC2626] focus:ring-[#EF4444]'
+    primary: 'bg-primary text-white hover:bg-primary-dark focus:ring-primary shadow-medium hover:shadow-large transition-all',
+    secondary: 'bg-secondary text-white hover:bg-secondary-dark focus:ring-secondary shadow-medium hover:shadow-large transition-all',
+    outline: 'bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white focus:ring-primary transition-all',
+    danger: 'bg-high-risk text-white hover:bg-high-risk/90 focus:ring-high-risk shadow-medium hover:shadow-large transition-all'
   };
 
   const sizes = {

@@ -8,26 +8,26 @@
 export default function RiskBadge({ riskLevel, confidence }) {
   const riskStyles = {
     Low: {
-      bg: 'bg-[#10B981]',
+      bg: 'bg-low-risk',
       text: 'text-white',
-      border: 'border-[#10B981]'
+      border: 'border-low-risk'
     },
     Medium: {
-      bg: 'bg-[#F59E0B]',
+      bg: 'bg-medium-risk',
       text: 'text-white',
-      border: 'border-[#F59E0B]'
+      border: 'border-medium-risk'
     },
     High: {
-      bg: 'bg-[#EF4444]',
+      bg: 'bg-high-risk',
       text: 'text-white',
-      border: 'border-[#EF4444]'
+      border: 'border-high-risk'
     }
   };
 
   const styles = riskStyles[riskLevel] || riskStyles.Low;
 
   return (
-    <div className={`${styles.bg} ${styles.text} rounded-lg p-6 md:p-8 text-center shadow-lg`}>
+    <div className={`${styles.bg} ${styles.text} rounded-xl p-6 md:p-8 text-center shadow-large`}>
       <div className="text-3xl md:text-4xl font-bold mb-2">
         {riskLevel} Risk
       </div>

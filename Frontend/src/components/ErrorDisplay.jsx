@@ -11,28 +11,28 @@ export default function ErrorDisplay({ message, onDismiss, show = true }) {
 
   return (
     <div 
-      className="bg-[#FEF2F2] border-2 border-[#EF4444] rounded-lg p-4 mb-4 animate-fade-in"
+      className="bg-high-risk-light border-2 border-high-risk rounded-xl p-4 mb-4 animate-fade-in"
       role="alert"
       aria-live="assertive"
     >
       <div className="flex items-start">
         <div className="flex-shrink-0">
-          <svg className="h-5 w-5 text-[#EF4444]" viewBox="0 0 20 20" fill="currentColor">
+          <svg className="h-5 w-5 text-high-risk" viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
           </svg>
         </div>
         <div className="ml-3 flex-1">
-          <h3 className="text-sm font-semibold text-[#991B1B] mb-1">
+          <h3 className="text-sm font-semibold text-high-risk mb-1">
             Error
           </h3>
-          <p className="text-sm text-[#7F1D1D]">
+          <p className="text-sm text-high-risk/90">
             {message}
           </p>
         </div>
         {onDismiss && (
           <button
             onClick={onDismiss}
-            className="ml-4 flex-shrink-0 text-[#991B1B] hover:text-[#7F1D1D] focus:outline-none"
+            className="ml-4 flex-shrink-0 text-high-risk hover:text-high-risk/80 focus:outline-none focus:ring-2 focus:ring-high-risk rounded"
             aria-label="Dismiss error"
           >
             <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

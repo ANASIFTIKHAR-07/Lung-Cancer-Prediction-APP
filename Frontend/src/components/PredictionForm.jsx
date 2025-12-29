@@ -119,20 +119,20 @@ export default function PredictionForm() {
                      formData.smokingHistory;
 
   return (
-    <div className="min-h-screen bg-[#F9FAFB] py-8 px-4">
+    <div className="min-h-screen bg-background py-8 px-4">
       <div className="max-w-2xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-[#111827] mb-2">
+          <h1 className="text-3xl md:text-4xl font-bold text-text-primary mb-3 tracking-tight">
             Lung Cancer Risk Assessment
           </h1>
-          <p className="text-[#6B7280] text-lg">
+          <p className="text-text-secondary text-lg">
             Please provide the following information for analysis
           </p>
         </div>
 
         {/* Form Card */}
-        <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-6 md:p-8">
+        <form onSubmit={handleSubmit} className="bg-card-bg rounded-xl shadow-large p-6 md:p-8 border border-border/50">
           {/* Error Display */}
           <ErrorDisplay 
             message={submitError} 
@@ -142,8 +142,8 @@ export default function PredictionForm() {
           
           {/* Biological Sequence */}
           <div className="mb-6">
-            <label htmlFor="biologicalSequence" className="block text-sm font-semibold text-[#111827] mb-2">
-              Biological Sequence <span className="text-[#EF4444]">*</span>
+            <label htmlFor="biologicalSequence" className="block text-sm font-semibold text-text-primary mb-2">
+              Biological Sequence <span className="text-high-risk">*</span>
             </label>
             <textarea
               id="biologicalSequence"
@@ -151,27 +151,27 @@ export default function PredictionForm() {
               value={formData.biologicalSequence}
               onChange={(e) => handleChange('biologicalSequence', e.target.value)}
               placeholder="Enter biological sequence data (DNA/RNA/Protein sequence)"
-              className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563EB] transition-all ${
+              className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all ${
                 errors.biologicalSequence 
-                  ? 'border-[#EF4444]' 
-                  : 'border-[#E5E7EB] focus:border-[#2563EB]'
+                  ? 'border-high-risk' 
+                  : 'border-border focus:border-primary'
               }`}
               disabled={isLoading}
             />
             <div className="flex justify-between items-center mt-1">
-              <span className="text-sm text-[#6B7280]">
+              <span className="text-sm text-text-secondary">
                 {formData.biologicalSequence.length} characters
               </span>
               {errors.biologicalSequence && (
-                <span className="text-sm text-[#EF4444]">{errors.biologicalSequence}</span>
+                <span className="text-sm text-high-risk">{errors.biologicalSequence}</span>
               )}
             </div>
           </div>
 
           {/* Age */}
           <div className="mb-6">
-            <label htmlFor="age" className="block text-sm font-semibold text-[#111827] mb-2">
-              Age <span className="text-[#EF4444]">*</span>
+            <label htmlFor="age" className="block text-sm font-semibold text-text-primary mb-2">
+              Age <span className="text-high-risk">*</span>
             </label>
             <input
               type="number"
@@ -180,31 +180,31 @@ export default function PredictionForm() {
               max="100"
               value={formData.age || ''}
               onChange={(e) => handleChange('age', parseInt(e.target.value) || '')}
-              className={`w-full h-12 px-4 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563EB] transition-all ${
+              className={`w-full h-12 px-4 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all ${
                 errors.age 
-                  ? 'border-[#EF4444]' 
-                  : 'border-[#E5E7EB] focus:border-[#2563EB]'
+                  ? 'border-high-risk' 
+                  : 'border-border focus:border-primary'
               }`}
               disabled={isLoading}
             />
             {errors.age && (
-              <span className="text-sm text-[#EF4444] mt-1 block">{errors.age}</span>
+              <span className="text-sm text-high-risk mt-1 block">{errors.age}</span>
             )}
           </div>
 
           {/* Smoking History */}
           <div className="mb-6">
-            <label htmlFor="smokingHistory" className="block text-sm font-semibold text-[#111827] mb-2">
-              Smoking History <span className="text-[#EF4444]">*</span>
+            <label htmlFor="smokingHistory" className="block text-sm font-semibold text-text-primary mb-2">
+              Smoking History <span className="text-high-risk">*</span>
             </label>
             <select
               id="smokingHistory"
               value={formData.smokingHistory}
               onChange={(e) => handleChange('smokingHistory', e.target.value)}
-              className={`w-full h-12 px-4 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563EB] transition-all ${
+              className={`w-full h-12 px-4 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all ${
                 errors.smokingHistory 
-                  ? 'border-[#EF4444]' 
-                  : 'border-[#E5E7EB] focus:border-[#2563EB]'
+                  ? 'border-high-risk' 
+                  : 'border-border focus:border-primary'
               }`}
               disabled={isLoading}
             >
@@ -214,13 +214,13 @@ export default function PredictionForm() {
               <option value="Current Smoker">Current Smoker</option>
             </select>
             {errors.smokingHistory && (
-              <span className="text-sm text-[#EF4444] mt-1 block">{errors.smokingHistory}</span>
+              <span className="text-sm text-high-risk mt-1 block">{errors.smokingHistory}</span>
             )}
           </div>
 
           {/* Gender */}
           <div className="mb-6">
-            <label className="block text-sm font-semibold text-[#111827] mb-2">
+            <label className="block text-sm font-semibold text-text-primary mb-2">
               Gender (Optional)
             </label>
             <div className="flex gap-6">
@@ -232,10 +232,10 @@ export default function PredictionForm() {
                     value={gender}
                     checked={formData.gender === gender}
                     onChange={(e) => handleChange('gender', e.target.value)}
-                    className="w-4 h-4 text-[#2563EB] focus:ring-[#2563EB]"
+                    className="w-4 h-4 text-primary focus:ring-primary"
                     disabled={isLoading}
                   />
-                  <span className="ml-2 text-[#111827]">{gender}</span>
+                  <span className="ml-2 text-text-primary">{gender}</span>
                 </label>
               ))}
             </div>
@@ -248,10 +248,10 @@ export default function PredictionForm() {
                 type="checkbox"
                 checked={formData.familyHistory}
                 onChange={(e) => handleChange('familyHistory', e.target.checked)}
-                className="w-5 h-5 text-[#2563EB] rounded focus:ring-[#2563EB]"
+                className="w-5 h-5 text-primary rounded focus:ring-primary"
                 disabled={isLoading}
               />
-              <span className="ml-2 text-[#111827]">
+              <span className="ml-2 text-text-primary">
                 Family history of lung cancer (Optional)
               </span>
             </label>
