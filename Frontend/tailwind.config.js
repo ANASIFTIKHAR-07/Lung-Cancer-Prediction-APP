@@ -30,7 +30,7 @@ export default {
           light: '#FEE2E2',        // Light red for backgrounds
         },
         background: '#F8FAFC',     // Softer background
-        'card-bg': '#FFFFFF',
+        'card-bg': '#FAFBFC',      // Subtle off-white (softer than pure white)
         'text-primary': '#0F172A',   // Deeper, more readable
         'text-secondary': '#64748B', // Softer secondary text
         border: '#E2E8F0',          // Softer borders

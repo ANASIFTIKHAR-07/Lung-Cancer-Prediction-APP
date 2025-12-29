@@ -51,7 +51,7 @@ export default function Landing() {
 
           {/* Features Grid */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <div className="bg-white rounded-xl p-8 shadow-medium hover:shadow-large transition-all duration-300 border border-border/50 group">
+            <div className="bg-card-bg rounded-xl p-8 shadow-medium hover:shadow-large transition-all duration-300 border border-border/50 group">
               <div className="w-14 h-14 bg-primary-light/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary-light/20 transition-colors">
                 <AnalysisIcon className="w-7 h-7 text-primary" />
               </div>
@@ -60,7 +60,7 @@ export default function Landing() {
                 State-of-the-art ML models analyze biological data with precision
               </p>
             </div>
-            <div className="bg-white rounded-xl p-8 shadow-medium hover:shadow-large transition-all duration-300 border border-border/50 group">
+            <div className="bg-card-bg rounded-xl p-8 shadow-medium hover:shadow-large transition-all duration-300 border border-border/50 group">
               <div className="w-14 h-14 bg-secondary-light/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-secondary-light/20 transition-colors">
                 <SpeedIcon className="w-7 h-7 text-secondary" />
               </div>
@@ -69,7 +69,7 @@ export default function Landing() {
                 Get instant risk assessments in seconds
               </p>
             </div>
-            <div className="bg-white rounded-xl p-8 shadow-medium hover:shadow-large transition-all duration-300 border border-border/50 group">
+            <div className="bg-card-bg rounded-xl p-8 shadow-medium hover:shadow-large transition-all duration-300 border border-border/50 group">
               <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
                 <SecurityIcon className="w-7 h-7 text-accent" />
               </div>
@@ -83,7 +83,7 @@ export default function Landing() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-border py-8 px-4">
+      <footer className="bg-card-bg border-t border-border py-8 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-text-secondary text-sm md:text-base leading-relaxed">
             <strong className="text-high-risk font-semibold">⚠️ For Research Purposes Only</strong> - 
