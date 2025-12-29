@@ -108,22 +108,56 @@ export async function mockPredict(formData) {
  * @returns {Promise<Object>} Prediction results from API
  */
 export async function realPredict(formData) {
-  const response = await fetch('http://localhost:8000/api/predict', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      sequence: formData.biologicalSequence,
-      age: formData.age,
-      smoking_status: formData.smokingHistory,
-      gender: formData.gender,
-      family_history: formData.familyHistory
-    })
-  });
+  // Import config dynamically to avoid circular dependencies
+  const { config } = await import('../config/env');
+  
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+  
+  try {
+    const response = await fetch(config.api.fullUrl(), {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        sequence: formData.biologicalSequence,
+        age: formData.age,
+        smoking_status: formData.smokingHistory,
+        gender: formData.gender,
+        family_history: formData.familyHistory
+      }),
+      signal: controller.signal
+    });
 
-  if (!response.ok) {
-    throw new Error('Prediction failed');
+    clearTimeout(timeoutId);
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.message || `API error: ${response.status} ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    
+    // Validate response structure
+    if (!data.risk_level || !data.confidence) {
+      throw new Error('Invalid response format from API');
+    }
+    
+    return data;
+  } catch (error) {
+    clearTimeout(timeoutId);
+    
+    if (error.name === 'AbortError') {
+      throw new Error('Request timeout. Please try again.');
+    }
+    
+    if (error.message) {
+      throw error;
+    }
+    
+    throw new Error('Network error. Please check your connection and try again.');
   }
-
-  return await response.json();
 }
 

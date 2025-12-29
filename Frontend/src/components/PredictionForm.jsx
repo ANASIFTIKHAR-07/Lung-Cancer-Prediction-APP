@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { usePrediction } from '../context/PredictionContext';
 import { mockPredict } from '../utils/mockPredict';
+import { sanitizeSequence, sanitizeAge, sanitizeSmokingHistory, sanitizeGender } from '../utils/sanitize';
 import Button from './Button';
+import ErrorDisplay from './ErrorDisplay';
 
 /**
  * Prediction Form Page Component
@@ -14,6 +16,7 @@ export default function PredictionForm() {
   
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
 
   // Validation rules
   const validate = () => {
@@ -42,14 +45,36 @@ export default function PredictionForm() {
   };
 
   const handleChange = (field, value) => {
-    updateFormData({ [field]: value });
-    // Clear error when user starts typing
+    // Sanitize input based on field type
+    let sanitizedValue = value;
+    
+    if (field === 'biologicalSequence') {
+      sanitizedValue = sanitizeSequence(value);
+    } else if (field === 'age') {
+      const sanitized = sanitizeAge(value);
+      sanitizedValue = sanitized !== null ? sanitized : value;
+    } else if (field === 'smokingHistory') {
+      const sanitized = sanitizeSmokingHistory(value);
+      sanitizedValue = sanitized !== null ? sanitized : value;
+    } else if (field === 'gender') {
+      const sanitized = sanitizeGender(value);
+      sanitizedValue = sanitized !== null ? sanitized : value;
+    }
+    
+    updateFormData({ [field]: sanitizedValue });
+    
+    // Clear errors when user starts typing
     if (errors[field]) {
       setErrors(prev => {
         const newErrors = { ...prev };
         delete newErrors[field];
         return newErrors;
       });
+    }
+    
+    // Clear submit error
+    if (submitError) {
+      setSubmitError(null);
     }
   };
 
@@ -61,6 +86,7 @@ export default function PredictionForm() {
     }
 
     setIsLoading(true);
+    setSubmitError(null);
     
     try {
       const prediction = await mockPredict(formData);
@@ -68,7 +94,21 @@ export default function PredictionForm() {
       navigate('/results');
     } catch (error) {
       console.error('Prediction error:', error);
-      alert('An error occurred during prediction. Please try again.');
+      
+      // User-friendly error messages
+      let errorMessage = 'An error occurred during prediction. Please try again.';
+      
+      if (error.message) {
+        if (error.message.includes('network') || error.message.includes('fetch')) {
+          errorMessage = 'Network error. Please check your connection and try again.';
+        } else if (error.message.includes('timeout')) {
+          errorMessage = 'Request timed out. Please try again.';
+        } else {
+          errorMessage = error.message;
+        }
+      }
+      
+      setSubmitError(errorMessage);
     } finally {
       setIsLoading(false);
     }
@@ -93,6 +133,13 @@ export default function PredictionForm() {
 
         {/* Form Card */}
         <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-6 md:p-8">
+          {/* Error Display */}
+          <ErrorDisplay 
+            message={submitError} 
+            onDismiss={() => setSubmitError(null)}
+            show={!!submitError}
+          />
+          
           {/* Biological Sequence */}
           <div className="mb-6">
             <label htmlFor="biologicalSequence" className="block text-sm font-semibold text-[#111827] mb-2">

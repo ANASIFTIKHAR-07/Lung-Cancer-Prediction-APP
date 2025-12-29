@@ -152,6 +152,30 @@ The current mock prediction algorithm generates results based on the following f
 - **Medium Risk** (30-59 points): 70-85% confidence
 - **Low Risk** (<30 points): 75-95% confidence
 
+## ⚙️ Environment Variables
+
+### Setup
+
+1. Copy the example file:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Edit `.env` with your values:
+   ```env
+   VITE_API_BASE_URL=http://localhost:8000
+   VITE_API_ENDPOINT=/api/predict
+   VITE_APP_ENV=development
+   ```
+
+### Important Notes
+
+- **`.env.example`** = Template (safe to commit to Git)
+- **`.env`** = Your actual config (NOT in Git, protected by `.gitignore`)
+- **Frontend env vars are public** - URLs are baked into the bundle at build time
+- **Never put secrets** (API keys, tokens) in frontend `.env` files
+- **API URLs are fine** - They're discoverable in browser Network tab anyway
+
 ## 🔌 Future FastAPI Integration
 
 ### API Endpoint Structure
@@ -265,6 +289,42 @@ Before deployment, ensure:
 ## 📄 License
 
 This project is for research and educational purposes.
+
+## 🚀 Production Deployment
+
+### Quick Steps
+
+1. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+2. **Set environment variables** (create `.env.production`):
+   ```env
+   VITE_API_BASE_URL=https://api.yourdomain.com
+   VITE_API_ENDPOINT=/api/predict
+   VITE_APP_ENV=production
+   ```
+
+3. **Deploy the `dist` folder** to your hosting service
+
+### Production Features
+
+- ✅ Error Boundary (catches crashes)
+- ✅ Input sanitization (XSS protection)
+- ✅ Code splitting (lazy-loaded routes)
+- ✅ SEO meta tags
+- ✅ Security headers
+- ✅ User-friendly error messages
+
+### Pre-Deployment Checklist
+
+- [ ] Test production build locally: `npm run preview`
+- [ ] Set production API URL in `.env.production`
+- [ ] Enable HTTPS
+- [ ] Test error handling
+- [ ] Verify mobile responsiveness
+- [ ] Test on multiple browsers
 
 ## 👥 Development
 
