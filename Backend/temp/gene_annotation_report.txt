@@ -1,0 +1,140 @@
+======================================================================
+TOP 20 DISCRIMINATIVE GENES FOR LUAD CLASSIFICATION
+======================================================================
+
+
+1. C10orf67-AS1 (ENSG00000224215)
+   Type: ncRNA
+   Location: Chromosome 10
+   Name: C10orf67 antisense RNA 1
+----------------------------------------------------------------------
+
+2. SERTM1 (ENSG00000180440)
+   Type: protein-coding
+   Location: Chromosome 13
+   Name: serine rich and transmembrane domain containing 1
+   Summary: Located in intracellular membrane-bounded organelle. [provided by Alliance of Genome Resources, Apr 2022]...
+----------------------------------------------------------------------
+
+3. LINC01996 (ENSG00000261863)
+   Type: Unknown
+   Location: Chromosome 17
+   Name: long intergenic non-protein coding RNA 1996
+----------------------------------------------------------------------
+
+4. GPM6A (ENSG00000150625)
+   Type: protein-coding
+   Location: Chromosome 4
+   Name: glycoprotein M6A
+   Summary: Predicted to enable calcium channel activity. Involved in neuron migration and stem cell differentiation. Located in extracellular exosome. [provided by Alliance of Genome Resources, Apr 2022]...
+----------------------------------------------------------------------
+
+5. SLC6A4 (ENSG00000108576)
+   Type: protein-coding
+   Location: Chromosome 17
+   Name: solute carrier family 6 member 4
+   Summary: This gene encodes an integral membrane protein that transports the neurotransmitter serotonin from synaptic spaces into presynaptic neurons. The encoded protein terminates the action of serotonin and ...
+----------------------------------------------------------------------
+
+6. ITLN2 (ENSG00000158764)
+   Type: protein-coding
+   Location: Chromosome 1
+   Name: intelectin 2
+   Summary: Predicted to enable oligosaccharide binding activity. Predicted to be active in extracellular space. [provided by Alliance of Genome Resources, Apr 2022]...
+----------------------------------------------------------------------
+
+7. SH3GL3 (ENSG00000140600)
+   Type: protein-coding
+   Location: Chromosome Unknown
+   Name: SH3 domain containing GRB2 like 3, endophilin A3
+   Summary: Enables identical protein binding activity. Predicted to be involved in synaptic vesicle uncoating. Predicted to be located in acrosomal vesicle; early endosome membrane; and presynapse. Predicted to ...
+----------------------------------------------------------------------
+
+8. CD300LG (ENSG00000161649)
+   Type: protein-coding
+   Location: Chromosome 17
+   Name: CD300 molecule like family member g
+   Summary: Members of the CD300 (see MIM 606786)-like (CD300L) family, such as CD300LG, are widely expressed on hematopoietic cells. All CD300L proteins are type I cell surface glycoproteins that contain a singl...
+----------------------------------------------------------------------
+
+9. SGCG (ENSG00000102683)
+   Type: protein-coding
+   Location: Chromosome 13
+   Name: sarcoglycan gamma
+   Summary: This gene encodes gamma-sarcoglycan, one of several sarcolemmal transmembrane glycoproteins that interact with dystrophin. The dystrophin-glycoprotein complex (DGC) spans the sarcolemma and is compris...
+----------------------------------------------------------------------
+
+10. WNT3A (ENSG00000154342)
+   Type: protein-coding
+   Location: Chromosome 1
+   Name: Wnt family member 3A
+   Summary: The WNT gene family consists of structurally related genes which encode secreted signaling proteins. These proteins have been implicated in oncogenesis and in several developmental processes, includin...
+----------------------------------------------------------------------
+
+11. RSPO1 (ENSG00000169218)
+   Type: protein-coding
+   Location: Chromosome 1
+   Name: R-spondin 1
+   Summary: This gene encodes a secreted activator protein with two cysteine-rich, furin-like domains and one thrombospondin type 1 domain. The encoded protein is a ligand for leucine-rich repeat-containing G-pro...
+----------------------------------------------------------------------
+
+12. GYPE (ENSG00000197465)
+   Type: protein-coding
+   Location: Chromosome 4
+   Name: glycophorin E (MNS blood group)
+   Summary: The protein encoded by this gene is a sialoglycoprotein and a type I membrane protein. It is a member of a gene family with GPA and GPB genes. This encoded protein might carry the M blood group antige...
+----------------------------------------------------------------------
+
+13. STX11 (ENSG00000135604)
+   Type: protein-coding
+   Location: Chromosome 6
+   Name: syntaxin 11
+   Summary: This gene encodes a member of the syntaxin family. Syntaxins have been implicated in the targeting and fusion of intracellular transport vesicles. This family member may regulate protein transport amo...
+----------------------------------------------------------------------
+
+14. SCUBE1 (ENSG00000159307)
+   Type: protein-coding
+   Location: Chromosome 22
+   Name: signal peptide, CUB domain and EGF like domain containing 1
+   Summary: This gene encodes a cell surface glycoprotein that is a member of the SCUBE (signal peptide, CUB domain, EGF (epidermal growth factor)-like protein) family. Family members have an amino-terminal signa...
+----------------------------------------------------------------------
+
+15. LINC00968 (ENSG00000246430)
+   Type: ncRNA
+   Location: Chromosome 8
+   Name: long intergenic non-protein coding RNA 968
+----------------------------------------------------------------------
+
+16. SPAAR (ENSG00000235387)
+   Type: protein-coding
+   Location: Chromosome 9
+   Name: small regulatory polypeptide of amino acid response
+   Summary: Involved in cellular response to amino acid stimulus and negative regulation of TORC1 signaling. Located in late endosome membrane. Is integral component of lysosomal membrane. Colocalizes with lysoso...
+----------------------------------------------------------------------
+
+17. RTKN2 (ENSG00000182010)
+   Type: protein-coding
+   Location: Chromosome 10
+   Name: rhotekin 2
+   Summary: Involved in negative regulation of intrinsic apoptotic signaling pathway; positive regulation of NF-kappaB transcription factor activity; and positive regulation of NIK/NF-kappaB signaling. Located in...
+----------------------------------------------------------------------
+
+18. CNTN6 (ENSG00000134115)
+   Type: protein-coding
+   Location: Chromosome 3
+   Name: contactin 6
+   Summary: The protein encoded by this gene is a member of the immunoglobulin superfamily. It is a glycosylphosphatidylinositol (GPI)-anchored neuronal membrane protein that functions as a cell adhesion molecule...
+----------------------------------------------------------------------
+
+19. STXBP6 (ENSG00000168952)
+   Type: protein-coding
+   Location: Chromosome 14
+   Name: syntaxin binding protein 6
+   Summary: STXBP6 binds components of the SNARE complex (see MIM 603215) and may be involved in regulating SNARE complex formation (Scales et al., 2002 [PubMed 12145319]).[supplied by OMIM, Mar 2008]...
+----------------------------------------------------------------------
+
+20. LANCL1-AS1 (ENSG00000234281)
+   Type: Unknown
+   Location: Chromosome 2
+   Name: LANCL1 antisense RNA 1
+----------------------------------------------------------------------
